@@ -8,6 +8,20 @@ const routes = [
     name: 'home',
     component: () =>
       import(/*webpackChunkName: "home-chuck"*/ '../pages/Home.vue'),
+      children: [
+        {
+          path: "",
+          redirect: "/home/message"
+        },
+        {
+          path: "message",
+          component: () => import("../pages/HomeMessage.vue")
+        },
+        {
+          path: "shops",
+          component: () => import("../pages/HomeShops.vue")
+        }
+      ]
   },
   {
     path: '/about',
