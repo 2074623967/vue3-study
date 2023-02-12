@@ -8,20 +8,20 @@ const routes = [
     name: 'home',
     component: () =>
       import(/*webpackChunkName: "home-chuck"*/ '../pages/Home.vue'),
-      children: [
-        {
-          path: "",
-          redirect: "/home/message"
-        },
-        {
-          path: "message",
-          component: () => import("../pages/HomeMessage.vue")
-        },
-        {
-          path: "shops",
-          component: () => import("../pages/HomeShops.vue")
-        }
-      ]
+    children: [
+      {
+        path: '',
+        redirect: '/home/message',
+      },
+      {
+        path: 'message',
+        component: () => import('../pages/HomeMessage.vue'),
+      },
+      {
+        path: 'shops',
+        component: () => import('../pages/HomeShops.vue'),
+      },
+    ],
   },
   {
     path: '/about',
@@ -48,4 +48,20 @@ const router = createRouter({
   routes,
   history: createWebHashHistory(),
 });
+
+// 动态添加路由
+const categoryRoute = {
+  path: '/category',
+  component: () => import('../pages/Category.vue'),
+};
+
+// 添加顶级路由对象
+router.addRoute(categoryRoute);
+
+// 添加二级路由对象
+router.addRoute('home', {
+  path: 'moment',
+  component: () => import('../pages/HomeMoment.vue'),
+});
+
 export default router;
