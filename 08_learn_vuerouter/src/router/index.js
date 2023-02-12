@@ -23,6 +23,11 @@ const routes = [
     name: 'user',
     component: () => import('../pages/User.vue'),
   },
+  {
+    path: '/:patchMatch(.*)',
+    name: 'notfound',
+    component: () => import('../pages/NotFound.vue'),
+  },
 ];
 //创建一个路由对象router
 const router = createRouter({
