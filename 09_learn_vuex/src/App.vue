@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Home from './pages/03_useState封装后使用.vue'
+import Home from './pages/04_mapGetters_computed.vue'
 export default {
   name: 'App',
   components: {
