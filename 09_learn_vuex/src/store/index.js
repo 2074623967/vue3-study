@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import { INCREMENT_N } from './mutation-types';
 
 const store = createStore({
   state() {
@@ -17,6 +18,12 @@ const store = createStore({
   mutations: {
     increment(state) {
       state.counter++;
+    },
+    decrement(state) {
+      state.counter--;
+    },
+    [INCREMENT_N](state, payload) {
+      state.counter += payload.n;
     },
   },
   getters: {
@@ -41,12 +48,12 @@ const store = createStore({
         return totalPrice * getters.currentDiscount;
       };
     },
-    nameInfo(state){
-      return `name:${state.name}`
+    nameInfo(state) {
+      return `name:${state.name}`;
     },
-    counterInfo(state){
-      return `counter:${state.counter}`
-    }
+    counterInfo(state) {
+      return `counter:${state.counter}`;
+    },
   },
   modules: {},
 });
