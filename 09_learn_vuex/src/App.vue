@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Home from './pages/07_mutations的辅助函数.vue'
+import Home from './pages/Home.vue'
 export default {
   name: 'App',
   components: {

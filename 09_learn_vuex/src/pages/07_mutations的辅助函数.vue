@@ -6,29 +6,23 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
+import { mapMutations } from 'vuex'
 import { INCREMENT_N } from '../store/mutation-types'
 export default {
   name: 'App',
   components: {},
   methods: {
-    methods: {
-      ...mapMutations(['increment', 'decrement', INCREMENT_N]),
-      ...mapMutations({
-        add: 'increment',
-      }),
-    },
-    setup() {
-      const storeMutations = mapMutations([
-        'increment',
-        'decrement',
-        INCREMENT_N,
-      ])
+    ...mapMutations(['increment', 'decrement', INCREMENT_N]),
+    ...mapMutations({
+      add: 'increment',
+    }),
+  },
+  setup() {
+    const storeMutations = mapMutations(['increment', 'decrement', INCREMENT_N])
 
-      return {
-        ...storeMutations,
-      }
-    },
+    return {
+      ...storeMutations,
+    }
   },
 }
 </script>

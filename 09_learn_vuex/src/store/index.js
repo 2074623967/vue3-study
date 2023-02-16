@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import { INCREMENT_N } from './mutation-types';
+import axios from 'axios';
 
 const store = createStore({
   state() {
@@ -13,6 +14,7 @@ const store = createStore({
         { name: '深入Node', price: 220, count: 2 },
       ],
       disCount: 0.6,
+      banners: [],
     };
   },
   mutations: {
@@ -24,6 +26,9 @@ const store = createStore({
     },
     [INCREMENT_N](state, payload) {
       state.counter += payload.n;
+    },
+    addBannerData(state, payload) {
+      state.banners = payload;
     },
   },
   getters: {
@@ -53,6 +58,39 @@ const store = createStore({
     },
     counterInfo(state) {
       return `counter:${state.counter}`;
+    },
+  },
+  actions: {
+    //1.参数问题
+    incrementAction(context) {
+      context.commit('increment');
+    },
+    //2.context的其他属性
+    decrementAction({
+      commit,
+      dispatch,
+      state,
+      rootState,
+      getters,
+      rootGetters,
+    }) {
+      commit('decrement');
+    },
+    getHomeMultidata(context) {
+      // axios.get('http://123.207.32.32:8080/home/multidata').then(res => {
+      //   context.commit('addBannerData', res.data.data.banner.list);
+      // });
+      return new Promise((resolve, reject) => {
+        axios
+          .get('http://123.207.32.32:8080/home/multidata')
+          .then(res => {
+            context.commit('addBannerData', res.data.data.banner.list);
+            resolve();
+          })
+          .catch(err => {
+            reject(err);
+          });
+      });
     },
   },
   modules: {},
