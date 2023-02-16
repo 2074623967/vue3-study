@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import { onMounted } from 'vue'
-import { useStore } from 'vuex'
 export default {
   name: 'App',
   components: {},
