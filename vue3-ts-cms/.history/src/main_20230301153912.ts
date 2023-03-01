@@ -20,9 +20,11 @@ const app = createApp(App)
 
 // globalRegisterApp(app)
 app.use(globalRegisterApp)
-app.use(store)
+
 setupStore()
+
 app.use(router)
+app.use(store)
 
 // app.use(ElementPlus)
 app.mount('#app')
