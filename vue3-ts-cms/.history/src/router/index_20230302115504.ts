@@ -32,14 +32,14 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
-  debugger
+  debu
   if (to.path !== '/login') {
     const token = localCache.getCache('token')
     if (!token) {
       return '/login'
     }
   }
-  if (to.path == '/main') {
+  if (to.path !== '/main') {
     return firstMenu.url
   }
 })

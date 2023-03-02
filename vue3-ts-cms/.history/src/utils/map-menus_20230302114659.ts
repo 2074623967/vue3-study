@@ -48,5 +48,3 @@ export function pathMapToMenu(userMenus: any[], currentPath: string): any {
     }
   }
 }
-
-export { firstMenu }

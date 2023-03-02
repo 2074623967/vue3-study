@@ -72,7 +72,7 @@ export default defineComponent({
 
     //data
     const menu = pathMapToMenu(userMenus.value, currentPath)
-    const defaultValue = ref(menu.id + '')
+    const defaultValue = ref(menu.id+'')
     //event handler
     const handleMenuItemClick = (item: any) => {
       console.log('--------')

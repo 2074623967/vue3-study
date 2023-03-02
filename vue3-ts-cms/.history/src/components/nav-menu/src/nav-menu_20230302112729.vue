@@ -5,7 +5,7 @@
       <span v-if="!collapse" class="title">Vue3+TS</span>
     </div>
     <el-menu
-      :default-active="defaultValue"
+      default-active="2"
       class="el-menu-vertical"
       :collapse="collapse"
       background-color="#0c2135"
@@ -24,7 +24,7 @@
             <!-- 遍历里面的item -->
             <template v-for="subitem in item.children" :key="subitem.id">
               <el-menu-item
-                :index="subitem.id + ''"
+               :index="subitem.id + ''"
                 @click="handleMenuItemClick(subitem)"
               >
                 <i v-if="subitem.icon" :class="subitem.icon"></i>
@@ -46,11 +46,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { useStore } from '@/store'
-import { useRouter, useRoute } from 'vue-router'
-
-import { pathMapToMenu } from '@/utils/map-menus'
+import { useRouter } from 'vue-router'
 
 // vuex - typescript  => pinia
 
@@ -67,12 +65,6 @@ export default defineComponent({
     const userMenus = computed(() => store.state.login.userMenus)
     //router
     const router = useRouter()
-    const route = useRoute()
-    const currentPath = route.path
-
-    //data
-    const menu = pathMapToMenu(userMenus.value, currentPath)
-    const defaultValue = ref(menu.id + '')
     //event handler
     const handleMenuItemClick = (item: any) => {
       console.log('--------')
@@ -82,7 +74,6 @@ export default defineComponent({
     }
     return {
       userMenus,
-      defaultValue,
       handleMenuItemClick
     }
   }

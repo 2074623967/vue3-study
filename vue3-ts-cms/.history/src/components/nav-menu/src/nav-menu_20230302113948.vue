@@ -48,9 +48,9 @@
 <script lang="ts">
 import { defineComponent, computed, ref } from 'vue'
 import { useStore } from '@/store'
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter ,useRoute} from 'vue-router'
 
-import { pathMapToMenu } from '@/utils/map-menus'
+import {pathMapToMenu} from '@/utils/map'
 
 // vuex - typescript  => pinia
 
@@ -67,12 +67,9 @@ export default defineComponent({
     const userMenus = computed(() => store.state.login.userMenus)
     //router
     const router = useRouter()
-    const route = useRoute()
-    const currentPath = route.path
 
     //data
-    const menu = pathMapToMenu(userMenus.value, currentPath)
-    const defaultValue = ref(menu.id + '')
+    const defaultValue = ref('2')
     //event handler
     const handleMenuItemClick = (item: any) => {
       console.log('--------')
