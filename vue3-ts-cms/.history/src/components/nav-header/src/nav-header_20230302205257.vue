@@ -18,9 +18,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
+import { defineComponent, ref } from 'vue'
 import UserInfo from './user-info.vue'
-import HyBreadcrumb from '@/base-ui/breadcrumb'
+import HyBreadcrumb, { IBreadcrumb } from '@/base-ui/breadcrumb'
 import { useStore } from '@/store'
 import { useRoute } from 'vue-router'
 import { pathMapBreadcrumbs } from '@/utils/map-menus'
