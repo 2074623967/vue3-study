@@ -38,13 +38,7 @@ import {
   ElCard
 } from 'element-plus/lib'
 
-import {
-  Expand,
-  Fold,
-  CircleClose,
-  Refresh,
-  Search
-} from '@element-plus/icons-vue'
+import { Expand, Fold, CircleClose ,Refresh} from '@element-plus/icons-vue'
 
 const components = [
   ElAside,
@@ -84,9 +78,7 @@ const components = [
   ElCard,
   Expand,
   Fold,
-  CircleClose,
-  Refresh,
-  Search
+  CircleClose
 ]
 
 export function registerElement(app: App): void {

@@ -24,11 +24,10 @@ app.use(store)
 setupStore()
 app.use(router)
 
-// app.config.globalProperties.$filters = {
-//   formatTime(value: string) {
-//     return '2021-08-13 22:22:22'
-//   }
-// }
+
+app.config.globalProperties.$filters={
+  formatTime(value；)
+}
 
 // app.use(ElementPlus)
 app.mount('#app')

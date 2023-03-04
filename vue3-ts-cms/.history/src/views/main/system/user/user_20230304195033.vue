@@ -9,14 +9,12 @@
             plain
             size="mini"
             :type="scope.row.enable ? 'success' : 'danger'"
-            >{{ scope.row.enable ? '启用' : '禁用' }}</el-button
           >
+            {{ scope.row.enable ? '启用' : '禁用' }}
+          </el-button>
         </template>
         <template #createAt="scope">
-          <strong>{{ $filters.formatTime(scope.row.createAt) }}</strong>
-        </template>
-        <template #updateAt="scope">
-          <strong>{{ $filters.formatTime(scope.row.updateAt) }}</strong>
+          <strong>{{ $filters.formatTime()  }}</strong>
         </template>
       </hy-table>
     </div>
