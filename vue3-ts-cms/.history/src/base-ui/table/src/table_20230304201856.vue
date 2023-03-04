@@ -55,9 +55,9 @@ export default defineComponent({
     }
   },
   emits: ['selectionChange'],
-  setup(props, { emit }) {
+  setup(props,{emits}) {
     const handleSelectionChange = (value: any) => {
-      emit('selectionChange', value)
+      console.log(value)
     }
     return { handleSelectionChange }
   }

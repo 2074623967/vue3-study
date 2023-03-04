@@ -1,17 +1,6 @@
 <template>
   <div class="hy-table">
-    <el-table
-      :data="listData"
-      border
-      style="width: 100%"
-      @selection-change="handleSelectionChange"
-    >
-      <el-table-column
-        v-if="showSelectColumn"
-        type="selection"
-        align="center"
-        width="60"
-      ></el-table-column>
+    <el-table :data="listData" border style="width: 100%">
       <el-table-column
         v-if="showIndexColumn"
         type="index"
@@ -22,9 +11,9 @@
       <template v-for="propItem in propList" :key="propItem.prop">
         <el-table-column v-bind="propItem" align="center">
           <template #default="scope">
-            <slot :name="propItem.slotName" :row="scope.row">{{
-              scope.row[propItem.prop]
-            }}</slot>
+            <slot :name="propItem.slotName" :row="scope.row">
+              {{ scope.row[propItem.prop] }}
+            </slot>
           </template>
         </el-table-column>
       </template>
@@ -54,12 +43,8 @@ export default defineComponent({
       default: false
     }
   },
-  emits: ['selectionChange'],
-  setup(props, { emit }) {
-    const handleSelectionChange = (value: any) => {
-      emit('selectionChange', value)
-    }
-    return { handleSelectionChange }
+  setup() {
+    return {}
   }
 })
 </script>

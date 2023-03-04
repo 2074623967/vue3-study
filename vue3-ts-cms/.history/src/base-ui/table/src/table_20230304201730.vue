@@ -22,9 +22,7 @@
       <template v-for="propItem in propList" :key="propItem.prop">
         <el-table-column v-bind="propItem" align="center">
           <template #default="scope">
-            <slot :name="propItem.slotName" :row="scope.row">{{
-              scope.row[propItem.prop]
-            }}</slot>
+            <slot :name="propItem.slotName" :row="scope.row">{{ scope.row[propItem.prop] }}</slot>
           </template>
         </el-table-column>
       </template>
@@ -54,10 +52,9 @@ export default defineComponent({
       default: false
     }
   },
-  emits: ['selectionChange'],
-  setup(props, { emit }) {
+  setup() {
     const handleSelectionChange = (value: any) => {
-      emit('selectionChange', value)
+      console.log(value)
     }
     return { handleSelectionChange }
   }

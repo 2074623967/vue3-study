@@ -24,12 +24,7 @@
         <template #updateAt="scope">
           <strong>{{ $filters.formatTime(scope.row.updateAt) }}</strong>
         </template>
-        <template #handler>
-          <div class="handle-btns">
-            <el-button size="mini" type="text">编辑</el-button>
-            <el-button size="mini" type="text">删除</el-button>
-          </div>
-        </template>
+        <
       </hy-table>
     </div>
   </div>
