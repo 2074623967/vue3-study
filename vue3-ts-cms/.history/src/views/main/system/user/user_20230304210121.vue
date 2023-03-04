@@ -13,7 +13,7 @@
       >
         <!--1.header中的插槽-->
         <template #headerHandler>
-          <el-button type="primary">新建用户</el-button>
+          <el-button @click="handle">新建用户</el-button>
         </template>
         <!--2.列中的插槽-->
         <template #status="scope">

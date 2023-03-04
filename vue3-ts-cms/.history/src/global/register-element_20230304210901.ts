@@ -84,7 +84,6 @@ const components = [
   ElTree,
   ElCard,
   Expand,
-  ElConfigProvider,
   Fold,
   CircleClose,
   Refresh,

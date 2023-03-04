@@ -30,28 +30,15 @@
       <template v-for="propItem in propList" :key="propItem.prop">
         <el-table-column v-bind="propItem" align="center">
           <template #default="scope">
-            <slot :name="propItem.slotName" :row="scope.row">{{
-              scope.row[propItem.prop]
-            }}</slot>
+            <slot :name="propItem.slotName" :row="scope.row">
+              {{ scope.row[propItem.prop] }}
+            </slot>
           </template>
         </el-table-column>
       </template>
     </el-table>
     <div class="footer">
-      <slot name="footer">
-        <el-pagination
-          :current-page="currentPage4"
-          :page-size="pageSize4"
-          :page-sizes="[100, 200, 300, 400]"
-          :small="small"
-          :disabled="disabled"
-          :background="background"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="400"
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-        />
-      </slot>
+      <slot name="footer"></slot>
     </div>
   </div>
 </template>

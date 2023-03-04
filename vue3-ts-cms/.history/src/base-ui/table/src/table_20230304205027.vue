@@ -2,10 +2,7 @@
   <div class="hy-table">
     <div class="header">
       <slot name="header">
-        <div class="title">{{ title }}</div>
-        <div class="handler">
-          <slot name="headerHandler"></slot>
-        </div>
+        <div class="title">{{title}}</div>
       </slot>
     </div>
     <el-table
@@ -38,20 +35,7 @@
       </template>
     </el-table>
     <div class="footer">
-      <slot name="footer">
-        <el-pagination
-          :current-page="currentPage4"
-          :page-size="pageSize4"
-          :page-sizes="[100, 200, 300, 400]"
-          :small="small"
-          :disabled="disabled"
-          :background="background"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="400"
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-        />
-      </slot>
+      <slot name="footer"></slot>
     </div>
   </div>
 </template>
@@ -61,9 +45,9 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    title: {
-      type: String,
-      default: ''
+  title: {
+      type: Array,
+      required: true
     },
     listData: {
       type: Array,
@@ -92,29 +76,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="less">
-.header {
-  display: flex;
-  height: 45px;
-  padding: 0 5px;
-  justify-content: space-between;
-  align-items: center;
-
-  .title {
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-  .handler {
-    align-items: center;
-  }
-}
-
-.footer {
-  margin-top: 15px;
-
-  .el-pagination {
-    text-align: right;
-  }
-}
-</style>
+<style scoped></style>

@@ -8,7 +8,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+
+// import { ElButton } from 'element-plus'
+
+// import 'element-plus/dist/index.css'
+
 export default defineComponent({
   name: 'App',
   props: {

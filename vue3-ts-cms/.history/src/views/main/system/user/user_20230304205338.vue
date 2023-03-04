@@ -4,18 +4,14 @@
 
     <div class="content">
       <hy-table
+
         :listData="userList"
         :propList="propList"
         :showIndexColumn="showIndexColumn"
         :showSelectColumn="showSelectColumn"
-        :title="title"
+         :title="title"
         @selectionChange="selectionChange"
       >
-        <!--1.header中的插槽-->
-        <template #headerHandler>
-          <el-button type="primary">新建用户</el-button>
-        </template>
-        <!--2.列中的插槽-->
         <template #status="scope">
           <el-button
             plain

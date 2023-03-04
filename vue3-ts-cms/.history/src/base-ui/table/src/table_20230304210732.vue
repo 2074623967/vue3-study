@@ -41,7 +41,7 @@
       <slot name="footer">
         <el-pagination
           :current-page="currentPage4"
-          :page-size="pageSize4"
+          v-model:page-size="pageSize4"
           :page-sizes="[100, 200, 300, 400]"
           :small="small"
           :disabled="disabled"

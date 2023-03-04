@@ -8,14 +8,8 @@
         :propList="propList"
         :showIndexColumn="showIndexColumn"
         :showSelectColumn="showSelectColumn"
-        :title="title"
         @selectionChange="selectionChange"
       >
-        <!--1.header中的插槽-->
-        <template #headerHandler>
-          <el-button type="primary">新建用户</el-button>
-        </template>
-        <!--2.列中的插槽-->
         <template #status="scope">
           <el-button
             plain
@@ -35,6 +29,9 @@
             <el-button size="mini" type="text">编辑</el-button>
             <el-button size="mini" type="text">删除</el-button>
           </div>
+        </template>
+        <template #header>
+
         </template>
       </hy-table>
     </div>
@@ -70,7 +67,6 @@ export default defineComponent({
     // const userCount = computed(() => store.state.system.userCount)
     const showIndexColumn = true
     const showSelectColumn = true
-    const title = '用户列表'
     const propList = [
       { prop: 'name', label: '用户名', minWidth: '100' },
       { prop: 'realname', label: '真实姓名', minWidth: '100' },
@@ -102,7 +98,6 @@ export default defineComponent({
       userList,
       showIndexColumn,
       showSelectColumn,
-      title,
       propList,
       selectionChange
     }
