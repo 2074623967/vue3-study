@@ -38,10 +38,10 @@ const systemModule: Module<ISystemState, IRootState> = {
       state.goodsCount = goodsCount
     },
     changeMenuList(state, menuList: any[]) {
-      state.menuList = menuList
+      state.goodsList = menuList
     },
     changeMenuCount(state, menuCount: number) {
-      state.menuCount = menuCount
+      state.goodsCount = menuCount
     }
   },
   getters: {

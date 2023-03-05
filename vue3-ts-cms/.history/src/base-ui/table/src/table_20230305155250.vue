@@ -13,7 +13,7 @@
       border
       style="width: 100%"
       @selection-change="handleSelectionChange"
-      v-bind="childrenProps"
+       v-bind="childrenProps"
     >
       <el-table-column
         v-if="showSelectColumn"
