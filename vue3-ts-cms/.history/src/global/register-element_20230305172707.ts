@@ -90,9 +90,7 @@ const components = [
   Fold,
   CircleClose,
   Refresh,
-  Search,
-  Edit,
-  Delete
+  Search
 ]
 
 export function registerElement(app: App): void {

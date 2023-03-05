@@ -45,8 +45,7 @@ import {
   CircleClose,
   Refresh,
   Search,
-  Edit,
-  Delete
+  Edit
 } from '@element-plus/icons-vue'
 
 const components = [
@@ -90,9 +89,7 @@ const components = [
   Fold,
   CircleClose,
   Refresh,
-  Search,
-  Edit,
-  Delete
+  Search
 ]
 
 export function registerElement(app: App): void {

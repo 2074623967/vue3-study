@@ -43,7 +43,7 @@ const loginModule: Module<ILoginState, IRootState> = {
       })
       // 获取用户按钮的权限
       const permissions = mapMenusToPermissions(userMenus)
-      state.permissions = permissions
+       state.permissions = permissions
     }
   },
   actions: {

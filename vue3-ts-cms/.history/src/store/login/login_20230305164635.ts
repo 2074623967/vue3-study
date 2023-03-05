@@ -41,9 +41,7 @@ const loginModule: Module<ILoginState, IRootState> = {
       routes.forEach((route) => {
         router.addRoute('main', route)
       })
-      // 获取用户按钮的权限
-      const permissions = mapMenusToPermissions(userMenus)
-      state.permissions = permissions
+      
     }
   },
   actions: {
