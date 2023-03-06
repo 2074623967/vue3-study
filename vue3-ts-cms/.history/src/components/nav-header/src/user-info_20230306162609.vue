@@ -24,19 +24,14 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useStore } from '@/store'
-import { useRouter } from 'vue-router'
-import localCache from '@/utils/cache'
+implements localCache from '@/utils/'
 
 export default defineComponent({
   setup() {
     const store = useStore()
     const name = computed(() => store.state.login.userInfo.name)
-    const router = useRouter()
 
-    const handleExitClick = () => {
-      localCache.deleteCache('token')
-      router.push('/main')
-    }
+    const handleExitClick = () => {}
 
     return {
       name,

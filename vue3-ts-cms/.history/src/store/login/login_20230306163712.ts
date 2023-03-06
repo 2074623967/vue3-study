@@ -54,7 +54,7 @@ const loginModule: Module<ILoginState, IRootState> = {
       commit('changeToken', token)
       localCache.setCache('token', token)
       //发送初始化的请求(完整的role/department)
-      dispatch('getInitialDataAction', null, { root: true })
+      dispatch('getInitialDataAction',null,{root:true})
       // 2.请求用户信息
       const userInfoResult = await requestUserInfoById(id)
       const userInfo = userInfoResult.data
@@ -70,13 +70,10 @@ const loginModule: Module<ILoginState, IRootState> = {
       // 4.跳到首页
       router.push('/main')
     },
-    //刷新操作
-    loadLocalLogin({ commit, dispatch }) {
+    loadLocalLogin({ commit }) {
       const token = localCache.getCache('token')
       if (token) {
         commit('changeToken', token)
-        //发送初始化的请求(完整的role/department)
-        dispatch('getInitialDataAction', null, { root: true })
       }
       const userInfo = localCache.getCache('userInfo')
       if (userInfo) {
