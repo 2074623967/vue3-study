@@ -29,22 +29,12 @@
       <template #updateAt="scope">
         <span>{{ $filters.formatTime(scope.row.updateAt) }}</span>
       </template>
-      <template #handler="scope">
+      <template #handler>
         <div class="handle-btns">
-          <el-button
-            v-if="isUpdate"
-            icon="Edit"
-            size="small"
-            type="text"
-            @click="handleEditClick(scope.row)"
+          <el-button v-if="isUpdate" icon="Edit" size="small" type="text"
             >编辑</el-button
           >
-          <el-button
-            v-if="isDelete"
-            icon="Delete"
-            size="small"
-            type="text"
-            @click="handleDeleteClick(scope.row)"
+          <el-button v-if="isDelete" icon="Delete" size="small" type="text"
             >删除</el-button
           >
         </div>
@@ -85,8 +75,7 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['newBtnClick', 'editBtnClick'],
-  setup(props, { emit }) {
+  setup(props) {
     const store = useStore()
 
     // 0.获取操作的权限
@@ -105,7 +94,7 @@ export default defineComponent({
       store.dispatch('system/getPageListAction', {
         pageName: props.pageName,
         queryInfo: {
-          offset: (pageInfo.value.currentPage - 1) * pageInfo.value.pageSize,
+          offset: pageInfo.value.currentPage * pageInfo.value.pageSize,
           size: pageInfo.value.pageSize,
           ...queryInfo
         }
@@ -132,21 +121,6 @@ export default defineComponent({
       }
     )
 
-    // 5.删除/编辑/新建操作
-    const handleDeleteClick = (item: any) => {
-      console.log(item)
-      store.dispatch('system/deletePageDataAction', {
-        pageName: props.pageName,
-        id: item.id
-      })
-    }
-    const handleNewClick = () => {
-      emit('newBtnClick')
-    }
-    const handleEditClick = (item: any) => {
-      emit('editBtnClick', item)
-    }
-
     return {
       dataList,
       getPageData,
@@ -155,10 +129,7 @@ export default defineComponent({
       otherPropSlots,
       isCreate,
       isUpdate,
-      isDelete,
-      handleDeleteClick,
-      handleNewClick,
-      handleEditClick
+      isDelete
     }
   }
 })

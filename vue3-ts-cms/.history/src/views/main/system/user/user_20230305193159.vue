@@ -51,7 +51,7 @@ export default defineComponent({
       const passwordItem = modalConfig.formItems.find(
         (item) => item.field === 'password'
       )
-      passwordItem!.isHidden = false
+      passwordItem?.isHidden = false
     }
     const editCallback = () => {
       const passwordItem = modalConfig.formItems.find(

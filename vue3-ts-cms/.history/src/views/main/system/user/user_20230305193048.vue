@@ -45,7 +45,7 @@ export default defineComponent({
   },
   setup() {
     const [pageContentRef, handleResetClick, handleQueryClick] = usePageSearch()
-    // pageModal相关的hook逻辑
+ // pageModal相关的hook逻辑
     // 1.处理密码的逻辑
     const newCallback = () => {
       const passwordItem = modalConfig.formItems.find(

@@ -93,7 +93,7 @@ const systemModule: Module<ISystemState, IRootState> = {
       //     break
       // }
     },
-    async deletePageDataAction({ dispatch }, payload: any) {
+   async deletePageDataAction({ dispatch }, payload: any) {
       // 1.获取pageName和id
       // pageName -> /users
       // id -> /users/id

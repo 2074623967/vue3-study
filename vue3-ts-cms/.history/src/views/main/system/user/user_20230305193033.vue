@@ -22,8 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { useStore } from '@/store'
+import { defineComponent } from 'vue'
 
 import PageSearch from '@/components/page-search'
 import PageContent from '@/components/page-content'
@@ -45,7 +44,7 @@ export default defineComponent({
   },
   setup() {
     const [pageContentRef, handleResetClick, handleQueryClick] = usePageSearch()
-    // pageModal相关的hook逻辑
+ // pageModal相关的hook逻辑
     // 1.处理密码的逻辑
     const newCallback = () => {
       const passwordItem = modalConfig.formItems.find(

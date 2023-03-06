@@ -2,12 +2,7 @@ import { Module } from 'vuex'
 import { IRootState } from '@/store/types'
 import { ISystemState } from './types'
 
-import {
-  getPageListData,
-  deletePageData,
-  createPageData,
-  editPageData
-} from '@/service/main/system/system'
+import { getPageListData } from '@/service/main/system/system'
 
 const systemModule: Module<ISystemState, IRootState> = {
   namespaced: true,
@@ -93,7 +88,7 @@ const systemModule: Module<ISystemState, IRootState> = {
       //     break
       // }
     },
-    async deletePageDataAction({ dispatch }, payload: any) {
+   async deletePageDataAction({ dispatch }, payload: any) {
       // 1.获取pageName和id
       // pageName -> /users
       // id -> /users/id

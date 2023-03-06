@@ -29,7 +29,7 @@
       <template #updateAt="scope">
         <span>{{ $filters.formatTime(scope.row.updateAt) }}</span>
       </template>
-      <template #handler="scope">
+      <template #handler>
         <div class="handle-btns">
           <el-button
             v-if="isUpdate"
@@ -85,8 +85,7 @@ export default defineComponent({
       required: true
     }
   },
-  emits: ['newBtnClick', 'editBtnClick'],
-  setup(props, { emit }) {
+  setup(props) {
     const store = useStore()
 
     // 0.获取操作的权限
@@ -155,10 +154,7 @@ export default defineComponent({
       otherPropSlots,
       isCreate,
       isUpdate,
-      isDelete,
-      handleDeleteClick,
-      handleNewClick,
-      handleEditClick
+      isDelete
     }
   }
 })
