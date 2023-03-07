@@ -54,8 +54,7 @@ const store = createStore<IRootState>({
   },
   modules: {
     login,
-    system,
-    dashboard
+    system
   }
 })
 
