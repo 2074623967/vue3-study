@@ -1,0 +1,49 @@
+<template>
+  <div class="user">
+    <page-search :searchFormConfig="searchFormConfig" />
+    <page-content
+      ref="pageContentRef"
+      :contentTableConfig="contentTableConfig"
+      pageName="role"
+      @newBtnClick="handleNewData"
+      @editBtnClick="handleEditData"
+    ></page-content>
+    <page-modal
+      :defaultInfo="defaultInfo"
+      ref="pageModalRef"
+      pageName="users"
+      :modalConfig="modalConfigRef"
+    ></page-modal>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+import PageSearch from '@/components/page-search'
+import PageContent from '@/components/page-content'
+
+import { searchFormConfig } from './config/search.config'
+import { contentTableConfig } from './config/content.config'
+
+export default defineComponent({
+  name: 'role',
+  components: {
+    PageSearch,
+    PageContent
+  },
+  setup() {
+    return {
+      searchFormConfig,
+      contentTableConfig
+    }
+  }
+})
+</script>
+
+<style scoped>
+.content {
+  padding: 20px;
+  border-top: 20px solid #f5f5f5;
+}
+</style>
